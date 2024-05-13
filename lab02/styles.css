@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.name {
+  display: flex;
+  align-items: center;
+}
+
+.contact {
+  align-self: flex-end;
+  margin-right: 5%;
+
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.contact h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contact p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.contact a {
+  display: inline-block;
+  text-decoration: none;
+  color: #000000;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+  color: #007bff;
+}
