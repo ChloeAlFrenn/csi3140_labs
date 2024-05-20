@@ -1,17 +1,32 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
+  background-color: #eda043;
+  width: 100%;
+  padding: 20px;
 }
 .name {
-  display: flex;
   align-items: center;
+}
+
+.name h1 {
+  font-weight: normal;
+  margin: 0;
 }
 
 .contact {
   align-self: flex-end;
   margin-right: 5%;
-
-  padding: 20px;
+  padding-bottom: 20px;
   border-radius: 8px;
 }
 
@@ -34,5 +49,28 @@
 
 .contact a:hover {
   text-decoration: underline;
-  color: #007bff;
+  color: #708295;
+}
+
+.resume-content {
+  display: grid;
+  grid-template-columns: 30% 2px 70%;
+}
+
+.left-side {
+  display: grid;
+  gap: 20px;
+}
+
+h2 {
+  font-size: 28px;
+  font-style: italic;
+  font-weight: normal;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  padding-left: 20px;
+}
+
+.vertical-line {
+  background-color: #333;
 }
