@@ -1,0 +1,103 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  width: 100%;
+  overflow-x: hidden;
+  border-bottom: 2px solid #333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #aad7f1cd;
+  width: 100%;
+  padding: 20px;
+}
+.name {
+  align-items: center;
+}
+
+.name h1 {
+  font-weight: normal;
+  margin: 0;
+}
+
+.contact {
+  align-self: flex-end;
+  margin-right: 5%;
+  padding-bottom: 20px;
+  border-radius: 8px;
+}
+
+.contact h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contact p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.contact a {
+  display: inline-block;
+  text-decoration: none;
+  color: #000000;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.resume-content {
+  display: grid;
+  grid-template-columns: 30% 2px 70%;
+}
+
+.left-side {
+  display: grid;
+  gap: 20px;
+}
+
+h2 {
+  font-size: 28px;
+
+  font-weight: normal;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+.vertical-line {
+  background-color: #333;
+}
+
+.section-content {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+h4 {
+  font-style: italic;
+  font-weight: normal;
+  padding-left: 10px;
+}
+
+.section-content ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.workexperience h2 {
+  border-bottom: none;
+}
+
+.skills h4 {
+  font-style: normal;
+  font-weight: bold;
+}
