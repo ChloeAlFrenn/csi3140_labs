@@ -24,36 +24,45 @@ function createGame(n) {
   );
   gameBoard[fruitIndex] = "@";
 
-  return gameBoard;
+  return {
+    board: gameBoard,
+    score: 0,
+  };
 }
 
 function getPacmanIndex(game) {
-  return game.indexOf("C");
+  return game.board.indexOf("C");
 }
 
 function moveLeft(game) {
   let pacmanIndex = getPacmanIndex(game);
   if (pacmanIndex > 0) {
-    game[pacmanIndex] = ".";
-    game[pacmanIndex - 1] = "C";
+    if (game.board[pacmanIndex - 1] === ".") {
+      game.score += 10;
+    }
+    game.board[pacmanIndex] = ".";
+    game.board[pacmanIndex - 1] = "C";
   }
   return game;
 }
 
 function moveRight(game) {
   let pacmanIndex = getPacmanIndex(game);
-  if (pacmanIndex < game.length - 1) {
-    game[pacmanIndex] = ".";
-    game[pacmanIndex + 1] = "C";
+  if (pacmanIndex < game.board.length - 1) {
+    if (game.board[pacmanIndex + 1] === ".") {
+      game.score += 10;
+    }
+    game.board[pacmanIndex] = ".";
+    game.board[pacmanIndex + 1] = "C";
   }
   return game;
 }
 
-let gameBoard = createGame(10);
-console.log("Initial Board:", gameBoard);
+let game = createGame(10);
+console.log("Initial Board:", game.board, "Score:", game.score);
 
-gameBoard = moveLeft(gameBoard);
-console.log("After moveLeft:", gameBoard);
+game = moveLeft(game);
+console.log("After moveLeft:", game.board, "Score:", game.score);
 
-gameBoard = moveRight(gameBoard);
-console.log("After moveRight:", gameBoard);
+game = moveRight(game);
+console.log("After moveRight:", game.board, "Score:", game.score);
