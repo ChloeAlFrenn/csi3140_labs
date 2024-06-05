@@ -40,8 +40,9 @@ function moveLeft(game) {
     if (game.board[pacmanIndex - 1] === ".") {
       game.score += 10;
     }
-    game.board[pacmanIndex] = ".";
+    game.board[pacmanIndex] = "-"; //removing the pellet
     game.board[pacmanIndex - 1] = "C";
+    checkLevelCompletion(game);
   }
   return game;
 }
@@ -52,10 +53,48 @@ function moveRight(game) {
     if (game.board[pacmanIndex + 1] === ".") {
       game.score += 10;
     }
-    game.board[pacmanIndex] = ".";
+    game.board[pacmanIndex] = "-";
     game.board[pacmanIndex + 1] = "C";
+    checkLevelCompletion(game);
   }
   return game;
+}
+
+function checkLevelCompletion(game) {
+  // Check if there are any pellets left on the board
+  if (!game.board.includes(".")) {
+    console.log("Level Completed!");
+    resetBoard(game); // Reset the board for the next level
+  }
+}
+
+function resetBoard(game) {
+  let n = game.board.length;
+  game.board = new Array(n).fill(".");
+
+  // Place Pacman
+  let pacmanIndex = Math.floor(Math.random() * n);
+  game.board[pacmanIndex] = "C";
+
+  // Place the Ghost
+  let ghostIndex;
+  do {
+    ghostIndex = Math.floor(Math.random() * n);
+  } while (ghostIndex === pacmanIndex);
+  game.board[ghostIndex] = "^";
+
+  // Place the Fruit
+  let fruitIndex;
+  do {
+    fruitIndex = Math.floor(Math.random() * n);
+  } while (
+    fruitIndex === pacmanIndex ||
+    fruitIndex === ghostIndex ||
+    game.board[fruitIndex] === "@"
+  );
+  game.board[fruitIndex] = "@";
+
+  console.log("New Level Started:", game.board);
 }
 
 let game = createGame(10);
